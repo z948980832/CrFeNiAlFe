@@ -6,10 +6,10 @@ This project uses SPXY (Sample set Partitioning based on joint X-Y distances) to
 
 The dataset contains 248 samples. The fixed SPXY split produces 190 training samples, 21 validation samples, and 37 test samples, with approximately 15% of the data reserved for testing.
 
-| Target | Test R² | RMSE | MAE |
-| --- | ---: | ---: | ---: |
-| UTS | 0.936489 | 76.4060 | 58.5950 |
-| EL | 0.867389 | 7.1357 | 4.0992 |
+| Target | Test R² |    RMSE |     MAE |
+| ------ | -------: | ------: | ------: |
+| UTS    | 0.936489 | 76.4060 | 58.5950 |
+| EL     | 0.867389 |  7.1357 |  4.0992 |
 
 The UTS result exceeds the original R² acceptance threshold of 0.9137. The EL result is approximately 0.0127 below its original threshold of 0.8801; this version has been retained as an accepted result.
 
@@ -130,25 +130,3 @@ If `4_predict/pre_vs_exp.csv` contains both predicted and experimental values, g
 ```powershell
 python .\4_predict\plot_pre_vs_exp.py
 ```
-
-## Data and Model Notes
-
-- The raw model inputs are Cr, Fe, Ni, Al, Ti, Co, Mn, Cu, Nb, Mo, and eight physicochemical descriptors.
-- The model outputs are fixed as UTS followed by EL; their order must not be changed.
-- Feature selection and standardization parameters are calculated from the training set only. Validation and test samples do not contribute to these statistics.
-- `fcnn_model.pt` stores the feature order, selected feature indices, standardization parameters, and neural-network weights required for inference.
-- `0_raw_data/data.ipynb` generates the physicochemical descriptors. Check and update its historical file paths before rerunning it.
-
-## Saved Artifacts
-
-- Feature matrices: `2_train/2_1_feature_engineering/engineered_features_86.csv` and `selected_features_55.csv`
-- Feature-correlation plot: `2_train/2_1_feature_engineering/feature_target_heatmap.png`
-- Model checkpoint: `2_train/2_2_model_training/fcnn_model.pt`
-- Test results: `3_test/test_predictions.csv` and `spxy_test_results_full.csv`
-- Test scatter plot: `3_test/test_predictions_scatter.png`
-- New-sample predictions: `4_predict/pre_with_predictions.csv`
-- Prediction-vs-experiment plot: `4_predict/pre_vs_exp_scatter.png`
-
-## Reproducibility
-
-The project includes fixed SPXY data indices and model-initialization settings. The current workflow can be reproduced by keeping the data, dependency versions, and training parameters unchanged and running the commands above in order. Minor numerical differences may occur across PyTorch versions or hardware environments.
