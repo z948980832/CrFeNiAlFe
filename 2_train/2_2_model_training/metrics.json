@@ -1,0 +1,231 @@
+{
+  "data_path": "D:\\File\\zzz\\chaoyu\\A2-multi\\chaoyu\\parameter.csv",
+  "row_count": 248,
+  "input_columns": {
+    "excel_range": "A:R",
+    "names": [
+      "Cr",
+      "Fe",
+      "Ni",
+      "Al",
+      "Ti",
+      "Co",
+      "Mn",
+      "Cu",
+      "Nb",
+      "Mo",
+      "Mean atom radius",
+      "Atomic size difference",
+      "Electronegativity",
+      "Standard deviation of electronegativity",
+      "Average VEC",
+      "Standard deviation of VEC",
+      "Mixing entropy",
+      "Mixing enthalpy"
+    ]
+  },
+  "feature_engineering": {
+    "raw_feature_count": 18,
+    "candidate_feature_count": 86,
+    "selected_feature_count": 55,
+    "selected_feature_names": [
+      "Cr",
+      "Fe",
+      "Ni",
+      "Al",
+      "Ti",
+      "Co",
+      "Mn",
+      "Cu",
+      "Nb",
+      "Mo",
+      "Mean atom radius",
+      "Atomic size difference",
+      "Electronegativity",
+      "Standard deviation of electronegativity",
+      "Average VEC",
+      "Standard deviation of VEC",
+      "Mixing entropy",
+      "Mixing enthalpy",
+      "present_Cr",
+      "present_Fe",
+      "present_Ni",
+      "present_Al",
+      "present_Ti",
+      "present_Co",
+      "present_Mn",
+      "present_Cu",
+      "present_Nb",
+      "present_Mo",
+      "component_count",
+      "composition_max",
+      "composition_std",
+      "Cr*Ni",
+      "Cr*Al",
+      "Cr*Ti",
+      "Cr*Co",
+      "Cr*Mn",
+      "Cr*Nb",
+      "Fe*Fe",
+      "Fe*Ni",
+      "Fe*Al",
+      "Fe*Ti",
+      "Fe*Co",
+      "Fe*Mn",
+      "Ni*Ni",
+      "Ni*Al",
+      "Ni*Ti",
+      "Ni*Mn",
+      "Al*Al",
+      "Al*Ti",
+      "Al*Co",
+      "Co*Co",
+      "Co*Mn",
+      "Co*Nb",
+      "Mn*Mn",
+      "Nb*Nb"
+    ],
+    "interaction_features_selected_on_training_rows": 24
+  },
+  "target_columns": [
+    "UTS",
+    "EL"
+  ],
+  "split": {
+    "method": "spxy",
+    "seed": 42,
+    "train_rows": 190,
+    "validation_rows": 21,
+    "test_rows": 37,
+    "test_fraction": 0.15,
+    "validation_fraction_of_non_test": 0.1
+  },
+  "selection": {
+    "criterion": "lowest validation MSE in standardized target space",
+    "restarts": 6,
+    "chosen": {
+      "initialization_seed": 42002,
+      "best_epoch": 202,
+      "epochs_run": 702,
+      "validation_loss": 0.07681690156459808,
+      "validation_r2_UTS": 0.9210218191146851,
+      "validation_r2_EL": 0.8678001165390015,
+      "train_r2_UTS": 0.9586672186851501,
+      "train_r2_EL": 0.8870287537574768
+    },
+    "candidates": [
+      {
+        "initialization_seed": 42000,
+        "best_epoch": 35,
+        "epochs_run": 535,
+        "validation_loss": 0.0782136544585228,
+        "validation_r2_UTS": 0.9254166483879089,
+        "validation_r2_EL": 0.8575178980827332,
+        "train_r2_UTS": 0.7878201603889465,
+        "train_r2_EL": 0.7310493588447571
+      },
+      {
+        "initialization_seed": 42001,
+        "best_epoch": 50,
+        "epochs_run": 550,
+        "validation_loss": 0.0883578211069107,
+        "validation_r2_UTS": 0.9320685863494873,
+        "validation_r2_EL": 0.8169800043106079,
+        "train_r2_UTS": 0.8572390079498291,
+        "train_r2_EL": 0.7790253758430481
+      },
+      {
+        "initialization_seed": 42002,
+        "best_epoch": 202,
+        "epochs_run": 702,
+        "validation_loss": 0.07681690156459808,
+        "validation_r2_UTS": 0.9210218191146851,
+        "validation_r2_EL": 0.8678001165390015,
+        "train_r2_UTS": 0.9586672186851501,
+        "train_r2_EL": 0.8870287537574768
+      },
+      {
+        "initialization_seed": 42003,
+        "best_epoch": 104,
+        "epochs_run": 604,
+        "validation_loss": 0.07960490882396698,
+        "validation_r2_UTS": 0.9211511611938477,
+        "validation_r2_EL": 0.8589542508125305,
+        "train_r2_UTS": 0.9398147463798523,
+        "train_r2_EL": 0.8613295555114746
+      },
+      {
+        "initialization_seed": 42004,
+        "best_epoch": 39,
+        "epochs_run": 539,
+        "validation_loss": 0.08445277065038681,
+        "validation_r2_UTS": 0.9250121116638184,
+        "validation_r2_EL": 0.8386597633361816,
+        "train_r2_UTS": 0.8059622049331665,
+        "train_r2_EL": 0.74699866771698
+      },
+      {
+        "initialization_seed": 42005,
+        "best_epoch": 374,
+        "epochs_run": 874,
+        "validation_loss": 0.07756304740905762,
+        "validation_r2_UTS": 0.9240217804908752,
+        "validation_r2_EL": 0.861426055431366,
+        "train_r2_UTS": 0.9682376384735107,
+        "train_r2_EL": 0.915174126625061
+      }
+    ]
+  },
+  "metrics": {
+    "train": {
+      "UTS": {
+        "r2": 0.9586672186851501,
+        "rmse": 57.91366958618164,
+        "mae": 37.52032470703125,
+        "threshold": 0.9137,
+        "passed": true
+      },
+      "EL": {
+        "r2": 0.8870287537574768,
+        "rmse": 7.417423248291016,
+        "mae": 4.202914237976074,
+        "threshold": 0.8801,
+        "passed": true
+      }
+    },
+    "validation": {
+      "UTS": {
+        "r2": 0.9210218787193298,
+        "rmse": 74.62188720703125,
+        "mae": 64.74993896484375,
+        "threshold": 0.9137,
+        "passed": true
+      },
+      "EL": {
+        "r2": 0.8678001165390015,
+        "rmse": 6.434401988983154,
+        "mae": 5.267573356628418,
+        "threshold": 0.8801,
+        "passed": false
+      }
+    },
+    "test": {
+      "UTS": {
+        "r2": 0.9364888668060303,
+        "rmse": 76.40602111816406,
+        "mae": 58.59496307373047,
+        "threshold": 0.9137,
+        "passed": true
+      },
+      "EL": {
+        "r2": 0.8673889636993408,
+        "rmse": 7.135706424713135,
+        "mae": 4.099197864532471,
+        "threshold": 0.8801,
+        "passed": false
+      }
+    }
+  },
+  "overall_passed": false,
+  "elapsed_seconds": 35.1614931000222
+}
