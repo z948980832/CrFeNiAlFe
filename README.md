@@ -22,16 +22,12 @@ The UTS result exceeds the original R² acceptance threshold of 0.9137. The EL r
 5. Standardize the inputs, UTS, and EL using training-set statistics, then select the model through validation-based early stopping across six fixed initializations.
 6. Evaluate the selected model on the independent test set and apply the saved parameters to new samples.
 
-See [WORKFLOW.md](WORKFLOW.md) for the complete method, training settings, and early-stopping details. See [DATA_FILES.md](DATA_FILES.md) for a full description of the project files.
-
 ## Project Structure
 
 ```text
 ML/
 ├─ requirement.txt                   # Python dependencies
 ├─ README.MD                         # Project overview and usage
-├─ WORKFLOW.md                       # Complete modeling workflow
-├─ DATA_FILES.md                     # Directory and file descriptions
 ├─ 0_raw_data/                       # Raw data, descriptors, and final training data
 ├─ 1_SPXY/                           # SPXY split script and fixed indices
 ├─ 2_train/
