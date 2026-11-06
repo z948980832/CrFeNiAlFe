@@ -25,16 +25,15 @@ The UTS result exceeds the original R² acceptance threshold of 0.9137. The EL r
 ## Project Structure
 
 ```text
-ML/
-├─ requirement.txt                   # Python dependencies
-├─ README.MD                         # Project overview and usage
-├─ 0_raw_data/                       # Raw data, descriptors, and final training data
-├─ 1_SPXY/                           # SPXY split script and fixed indices
-├─ 2_train/
-│  ├─ 2_1_feature_engineering/       # Feature construction, selection, and correlation plot
-│  └─ 2_2_model_training/            # Model, training scripts, parameters, and history
-├─ 3_test/                           # Held-out test inference, metrics, and scatter plot
-└─ 4_predict/                        # New-sample predictions and prediction-vs-experiment plot
+requirement.txt                   # Python dependencies
+README.MD                         # Project overview and usage
+0_raw_data/                       # Raw data, descriptors, and final training data
+1_SPXY/                           # SPXY split script and fixed indices
+ 2_train/
+├─ 2_1_feature_engineering/       # Feature construction, selection, and correlation plot
+└─ 2_2_model_training/            # Model, training scripts, parameters, and history
+3_test/                           # Held-out test inference, metrics, and scatter plot
+4_predict/                        # New-sample predictions and prediction-vs-experiment plot
 ```
 
 ## Requirements
@@ -65,8 +64,6 @@ source .venv/bin/activate
 ```
 
 ## Reproducing the Complete Workflow
-
-Run all commands below from the `ML` root directory.
 
 ### 1. Generate the Fixed SPXY Split
 
